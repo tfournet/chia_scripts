@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ./activate
+
 source global.sh
 
 plotcount=1
