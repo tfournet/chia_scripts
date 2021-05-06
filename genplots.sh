@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ./activate
+. ~/activate
 
 source global.sh
 
