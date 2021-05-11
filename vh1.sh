@@ -10,6 +10,8 @@ for count in $(seq 1 $sim_plots); do
     echo "Run $count of $sim_plots"
     sleeptime=$((($count-1) * $delay))
     
-    echo "Spawning script $count with $sleeptime second delay."
-    screen -dm bash -c "/home/tfournet/chia-blockchain/chia_scripts/vh1.sh $tempdir $plotdir $memsize $sleeptime" -S "Plot$count"  
+    screenName="Plot$count"
+    echo "Spawning session $screenName with $sleeptime second delay."
+    screen -dm bash -c "/home/tfournet/chia-blockchain/chia_scripts/plot.sh $tempdir $plotdir $memsize $sleeptime" -S $screenName
+    sleep 3
 done
