@@ -20,6 +20,6 @@ sleep $delay
 date
 
 for i in $(seq 1 $plotcount) ; do 
-    chia plots create -k $k_size -n 1 -b $memsize -f $farmer_pubkey -p $farmpool_pubkey -t $tempdir -d $plotdir -r $threads
+    chia plots create -k $k_size -n 2 -b $memsize -f $farmer_pubkey -p $farmpool_pubkey -t $tempdir -d $plotdir -r $threads
     chia plots check 
 done 
