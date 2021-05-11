@@ -5,6 +5,7 @@ tempdir="/plots/tmp"
 plotdir="/plots/final"
 memsize=8192
 delay=1800
+plotcount=6
 
 for count in $(seq 1 $sim_plots); do
     echo "Run $count of $sim_plots"
@@ -12,8 +13,8 @@ for count in $(seq 1 $sim_plots); do
     
     screenName="Plot$count"
     echo "Spawning session $screenName with $sleeptime second delay."
-    screen -S $screenName -dm bash -c "/home/tfournet/chia-blockchain/chia_scripts/plot.sh $tempdir $plotdir $memsize $sleeptime" 
-    sleep 3
+    screen -S $screenName -dm bash -c "/home/tfournet/chia-blockchain/chia_scripts/plot.sh $tempdir $plotdir $memsize $sleeptime $plotcount" 
+    sleep 1
 done
 
 screen -list 

@@ -8,6 +8,7 @@ tempdir=$1
 plotdir=$2
 memsize=$3
 delay=$4
+plotcount=$5
 k_size=32
 threads=2
 
@@ -20,4 +21,5 @@ date
 
 for i in $(seq 1 $plotcount) ; do 
     chia plots create -k $k_size -n 1 -b $memsize -f $farmer_pubkey -p $farmpool_pubkey -t $tempdir -d $plotdir -r $threads
+    chia plots check 
 done 
