@@ -8,6 +8,7 @@ tempdir="/plots/tmp"
 plotdir="/plots/final"
 memsize=16384
 threads=4
+k_size=32
 
 iteration=0
 while [ -d $tempdir ]; do
