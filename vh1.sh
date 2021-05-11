@@ -15,3 +15,6 @@ for count in $(seq 1 $sim_plots); do
     screen -S $screenName -dm bash -c "/home/tfournet/chia-blockchain/chia_scripts/plot.sh $tempdir $plotdir $memsize $sleeptime" 
     sleep 3
 done
+
+screen -list 
+
