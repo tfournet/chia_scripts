@@ -1,8 +1,8 @@
 #!/bin/sh
 
-. /home/tfournet/chia-blockchain/activate
+. ~/chia-blockchain/activate
 
-source /home/tfournet/chia-blockchain/chia_scripts/global.sh
+source ~/chia-blockchain/chia_scripts/global.sh
 
 tempdir=$1
 plotdir=$2
