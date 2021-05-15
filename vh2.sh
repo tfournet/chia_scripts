@@ -6,7 +6,7 @@ memsize=8192
 delay=900
 plotcount=6
 
-which screen || dnf -y install screen 
+which screen || sudo dnf -y install screen 
 
 mkdir -p $tempdir
 mkdir -p $plotdir 
