@@ -1,11 +1,15 @@
-sim_plots=6
-delay=1800
+sim_plots=12
 
-tempdir="/plots/tmp"
-plotdir="/plots/final"
+tempdir="/var/lib/plots/tmp"
+plotdir="/var/lib/plots/final"
 memsize=8192
-delay=1200
+delay=900
 plotcount=6
+
+which screen || dnf -y install screen 
+
+mkdir -p $tempdir
+mkdir -p $plotdir 
 
 for count in $(seq 1 $sim_plots); do
     echo "Run $count of $sim_plots"
