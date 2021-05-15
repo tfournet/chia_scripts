@@ -18,7 +18,7 @@ for count in $(seq 1 $sim_plots); do
     screenName="Plot$count"
     echo "Spawning session $screenName with $sleeptime second delay."
     screen -S $screenName -dm bash -c "/home/tfournet/chia-blockchain/chia_scripts/plot.sh $tempdir $plotdir $memsize $sleeptime $plotcount" 
-    sleep 1
+    #sleep 1
 done
 
 screen -list 
