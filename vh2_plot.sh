@@ -1,6 +1,8 @@
 #!/bin/sh
 
-source global.sh 
+source ~/chia_scripts/global.sh 
+
+dnf -y install podman-docker 
 
 tmpdir="/var/lib/plots/tmp"
 plotdir="/mnt/chia_farm1/$(hostname)"
