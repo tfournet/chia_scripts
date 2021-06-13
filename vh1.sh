@@ -1,8 +1,8 @@
 sim_plots=6
 delay=1800
 
-tempdir="/plots/tmp"
-plotdir="/plots/final"
+tempdir="/mnt/local/plots/tmp"
+plotdir="/mnt/local/plots/final"
 memsize=8192
 delay=1200
 plotcount=6
