@@ -2,7 +2,7 @@
 
 source ~/chia_scripts/global.sh 
 
-dnf -y install podman-docker 
+sudo dnf -y install podman-docker 
 
 tmpdir="/var/lib/plots/tmp"
 plotdir="/mnt/chia_farm1/$(hostname)"
@@ -15,11 +15,11 @@ plotfree=$(df -m $plotdir | tail -n 1 | awk {'print $4'})
 iteration=0
 
 while [[ $tmpfree -gt 250000 && $plotfree -gt 120000 ]]; do 
-  iteration = $iteration + 1
+  iteration=$iteration + 1
   echo $Running Iteration $iteration 
   docker run \
-      -v /mnt/local/plots/tmp/:/mnt/harvester \
-      -v /mnt/local/plots/final/:/mnt/farm \
+      -v $tmpdir:/mnt/harvester \
+      -v $plotdir:/mnt/farm \
       docker.io/odelucca/chia-plotter \
       -t /mnt/harvester/ \
       -d /mnt/farm/ \
