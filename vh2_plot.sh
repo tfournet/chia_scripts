@@ -15,7 +15,7 @@ plotfree=$(df -m $plotdir | tail -n 1 | awk {'print $4'})
 iteration=0
 
 while [[ $tmpfree -gt 250000 && $plotfree -gt 120000 ]]; do 
-  iteration=$iteration + 1
+  iteration=$(($iteration + 1))
   echo $Running Iteration $iteration 
   docker run \
       -v $tmpdir:/mnt/harvester \
