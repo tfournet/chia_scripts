@@ -4,8 +4,8 @@ source ~/chia_scripts/global.sh
 
 sudo dnf -y install podman-docker 
 
-tmpdir="/var/lib/plots/tmp"
-plotdir="/mnt/chia_farm1/$(hostname)"
+tmpdir="/mnt/local/plots/tmp/$(hostname)"
+plotdir="/mnt/local/plots/final"
 
 threads=$(nproc)
 
