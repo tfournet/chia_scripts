@@ -7,7 +7,7 @@ sudo dnf -y install podman-docker
 tmpdir="/mnt/local/plots/tmp/$(hostname)"
 plotdir="/mnt/local/plots/final"
 
-threads=$(nproc)
+threads=$(( $(nproc) - 4 ))
 
 tmpfree=$(df -m $tmpdir | tail -n 1 | awk {'print $4'})
 echo "Temp Free space $tmpfree megabytes"
@@ -18,7 +18,7 @@ iteration=0
 
 while [[ $tmpfree -gt 250000 && $plotfree -gt 120000 ]]; do 
   iteration=$(($iteration + 1))
-  echo $Running Iteration $iteration 
+  echo $Running Iteration $iteration with $threads threads
   docker run \
       -v $tmpdir:/mnt/harvester \
       -v $plotdir:/mnt/farm \
