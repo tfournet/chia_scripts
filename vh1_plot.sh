@@ -18,7 +18,7 @@ iteration=0
 
 while [[ $tmpfree -gt 250000 && $plotfree -gt 120000 ]]; do 
   iteration=$(($iteration + 1))
-  echo $Running Iteration $iteration with $threads threads
+  echo $Running Iteration $iteration with $threads threads. Temp Dir: $tmpdir. Plot Dir: $plotdir   
   docker run \
       -v $tmpdir:/mnt/harvester \
       -v $plotdir:/mnt/farm \
